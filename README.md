@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Crypto Planet Web App
+**Web desktop application for beta registration of crypto wallet**
+## About:
+- React
+- Typescript
+- Hooks
+- SASS/SCSS 
+- Figma: https://www.figma.com/file/ATvmQ5ieU3r5LleCxpeqk9/Unistory-frontend-test?node-id=19-369&t=OjVKxgPPCjMAsDjP-0
+- Used Crypto Wallet integration METAMASK: https://docs.metamask.io/guide/getting-started.html#basic-considerations
+- Backend API: https://new-backend.unistory.app/api#/
+- SVG Animation
+
+## Instructions:
+- npm i
+- npm start (localhost:3000)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
