@@ -1,0 +1,58 @@
+.modal-overlay {
+
+    position: absolute;
+    top: 40%;
+    left: 35%;
+
+    background-color: #262628;
+    width: 422px;
+    height: 295px;
+
+    &__container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 29px;
+        align-items: center;
+        margin-top: 48px;
+        margin-bottom: 43px;
+
+        h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 700;
+            color: #E75626;
+            font-size: 36px;
+        }
+        
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            text-align: center;
+            width: 320px;
+            color:  white;
+
+            a {
+                color: #E75626;
+                text-decoration: none;
+            }
+        }
+
+        button {
+            background-color: #E75626;
+            color: white;
+            border-radius: 30px;
+            border: none;
+            width: 129px;
+            height: 38px;
+            justify-content: center;
+
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+}

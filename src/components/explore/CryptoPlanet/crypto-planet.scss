@@ -1,0 +1,22 @@
+div {
+
+    .headline {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        h1 {
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            font-weight: 700;
+            line-height: 144px;
+            color: white;
+
+            span {
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 0.3px #FFFFFF;
+                opacity: 0.6;
+            }
+        }
+    }
+}
