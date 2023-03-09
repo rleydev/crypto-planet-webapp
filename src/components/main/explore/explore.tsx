@@ -4,21 +4,10 @@ import "./explore.scss"
 import CryptoPlanet from "./CryptoPlanet/crypto-planet"
 import Info from "./Info/info";
 
-const shortenAddress = (addr: string): string => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
-
 const Explore = () => {
 
-
-  const { activateBrowserWallet, deactivate, account } = useEthers();
-
-
-  // const [showAddress, setShowAddress] = useState(false);
-  // const { activateBrowserWallet, account } = useEthers();
-
-  // const handleConnectWallet = async () => {
-  //   await activateBrowserWallet();
-  //   setShowAddress(true);
-  // };
+  const shortenAddress = (addr: string): string => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
+  const { activateBrowserWallet, account } = useEthers();
 
   return (
     <div className="explore">
@@ -32,7 +21,7 @@ const Explore = () => {
             CONNECT METAMASK
           </button>
         ) : (
-          <div onClick={() => deactivate()} className="explore__header__adress">{shortenAddress(account)}</div>
+          <div className="explore__header__adress">{shortenAddress(account)}</div>
         )}
       </div>
       <CryptoPlanet />
