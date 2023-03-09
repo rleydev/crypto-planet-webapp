@@ -28,6 +28,7 @@ const Planet = () => {
                     <div className="planet__l2__stroke1">
                         <div className="planet__l2__stroke2">
                             <div className="planet__l2__lay">
+                                <div className="q-1"></div>
                             </div>
                         </div>
                     </div>

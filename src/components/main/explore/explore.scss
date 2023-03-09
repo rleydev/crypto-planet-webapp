@@ -2,6 +2,10 @@
     width: 100%;
     height: auto;
 
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+
     padding: 14px 64px 60px 64px;
 
     &__header {
@@ -24,7 +28,7 @@
             line-height: 21px;
         }
 
-        &__adress {
+        &__connect {
             width: 161px;
             height: 39px;
             border: none;
@@ -37,5 +41,15 @@
             font-weight: 400;
             line-height: 21px;
         }
+
+        &__adress {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21px;
+            width: 145px;
+            color: #E75626;
+        }
+
     }
 }

@@ -1,14 +1,15 @@
-import React from "react";
-import Explore from "../explore/explore";
-import './main.scss'
+import React from "react"
+import Explore from "./explore/explore"
+import User from "./UserSection/user"
+import "./main.scss"
 
 const Main = () => {
-    return (
-        <div className="">
-            <Explore />
-            MAIN
-        </div>
-    )
+  return (
+    <div className="main-page">
+      <Explore />
+      <User />
+    </div>
+  )
 }
 
-export default Main;
+export default Main

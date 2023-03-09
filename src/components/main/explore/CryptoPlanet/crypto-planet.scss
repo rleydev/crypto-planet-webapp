@@ -3,6 +3,8 @@
     margin-top: 202px;
 
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     &__headline {
 
@@ -12,6 +14,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        height: 200px;
 
         h1 {
             position: relative;
@@ -33,22 +36,25 @@
         }
 
         .nplanet {
+
             width: 350px;
-            height: 320px;
-            border-radius: 50%;
+                height: 320px;
+                border-radius: 50%;
+    
+                position: relative;
+                z-index: 11;
+                top: -288px;
+                left: 662.47px;
+    
+                text-transform: uppercase;
+                font-family: 'Bebas Neue', cursive;
+                font-size: 120px;
+                font-weight: 700;
+                line-height: 144px;
+                color: #E75626;
 
-            position: relative;
-            z-index: 11;
-            top: -288px;
-            left: 662.47px;
-
-            text-transform: uppercase;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 120px;
-            font-weight: 700;
-            line-height: 144px;
-            color: #E75626;
         }
+        
 
         .verse {
             height: 320px;
@@ -56,9 +62,8 @@
 
             position: relative;
             z-index: 11;
-            top: -464px;
+            top: -288px;
             left: 629.47px;
-
 
             text-transform: uppercase;
             font-family: 'Bebas Neue', cursive;
@@ -66,6 +71,8 @@
             font-weight: 700;
             line-height: 144px;
             color: #E75626;
+
+            border-radius: 50%;
         }
     }
 }

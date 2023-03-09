@@ -16,9 +16,9 @@ function App() {
 
   return (
     <div>
-      
-      {<Main />}
       {showModal && <ExtensionWindow handleClose={handleCloseModal} />} {/* Render the modal only when showModal is true */}
+      {<Main />}
+
 
     </div>
   );
