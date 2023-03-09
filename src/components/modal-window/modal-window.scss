@@ -4,6 +4,8 @@
     top: 40%;
     left: 35%;
 
+    z-index: 100;
+
     background-color: #262628;
     width: 422px;
     height: 295px;
@@ -53,6 +55,10 @@
             font-weight: 700;
             font-size: 18px;
             line-height: 21px;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

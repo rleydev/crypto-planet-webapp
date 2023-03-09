@@ -1,4 +1,95 @@
+
+
 .planet {
-    height: 486px;
-    width: 486px;
+    position: absolute;
+    top: 104px;
+    left: 621px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 532px;
+    height: 532px;
+    background-image: url(../../../../assets/Ellipse1.png);
+
+    &__l1 {
+        background-image: url(../../../../assets/Ellipse2.png);
+        background-size: contain;
+        width: 530px;
+        height: 530px;
+        rotate: 90deg;
+        position: relative;
+        top: 0px;
+        left: -1px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .planet-anim {
+        position: relative;
+        rotate: 180deg;
+        top: -40px; // left
+        left: 0px; // top
+        width: 600px;
+        height: 600px;
+        z-index: 21;
+        align-self: center;
+        justify-self: center;
+
+        // svg {
+        //     width: auto;
+        //     height: auto;
+        //     circle {
+        //         height: 486px;
+        //         width: 486px;
+        //     }
+        // }
+    }
+
+
+    &__l2 {
+        display: flex;
+        background-image:  url(../../../../assets/Ellipse3.png);
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 60px;
+        right: 65px;
+        z-index: 22;
+        width: 400px;
+        height: 400px;
+
+        &__stroke1 {
+            background-image: url(../../../../assets/EllipseStroke1.png);
+            background-size: contain;
+            width: 370px;
+            height: 370px;
+            margin-left: 15px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__stroke2 {
+            background-image: url(../../../../assets/EllipseStroke2.png);
+            background-size: contain;
+            width: 360px;
+            height: 360px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__lay {
+
+            background-image: url(../../../../assets/planet.png);
+            background-size: contain;
+            width: 320px;
+            height: 320px;
+        }
+    }
 }
