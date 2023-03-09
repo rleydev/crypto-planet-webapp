@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import BetaInfo from "./BetaInfo/betainfo"
 import Form from "./Form/form"
 import UserInfo from "./UserInfo/userinfo"
+import UsersTable from "./UsersTable/userstable"
 import "./user.scss"
 
 const User:React.FC = () => {
@@ -21,9 +22,8 @@ const User:React.FC = () => {
         ) : (
           <Form onSubmit={handleFormSubmit} />
         )}
-        
       </div>
-      
+      <UsersTable />
     </div>
   )
 }

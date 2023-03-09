@@ -1,0 +1,132 @@
+.users-table {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 700px;
+    
+
+    h4 {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 43px;
+        color: white;
+    }
+
+    article {
+        overflow-y: scroll;
+
+        .table-head {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 83px;
+            margin-top: 35px;
+
+            h3 {
+                font-family: 'Bebas Neue', cursive;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28.8px;
+                color: white;
+                text-align: left;
+                width: 104px;
+            }
+        }
+
+        .table-body-container {
+
+            height: 616px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                display: block;
+                width: 6px;
+                height: 6px;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: #E75626;
+            }
+
+            .table-body {
+                display: flex;
+                flex-direction: row;
+                justify-content:first baseline;
+    
+                .name-column {
+                    width: 188px;
+    
+                    padding: 16px 0 16px ;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    color: white;
+                    border-bottom: 1px solid white;
+    
+                    overflow-x: auto;
+                    text-overflow: ellipsis;
+                    
+                }
+    
+                .email-column {
+                    justify-content: baseline;
+                    width: 185px;
+                    text-align: left;
+    
+                    padding: 16px 0 16px 0;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    color: white;
+                    border-bottom: 1px solid white;
+    
+                    justify-content: baseline;
+                    text-align: left;
+    
+                    overflow-x: hidden;
+                 
+    
+                    padding: 16px 0 16px 0 ;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    color: white;
+                    border-bottom: 1px solid white;
+
+                    p {
+                        overflow-x: auto;
+                        text-overflow: ellipsis;
+                    }
+                }
+    
+                .wallet-column {
+                    display: flex;
+                    justify-content: baseline;
+                    width: 280px;
+                    text-align: left;
+    
+                    padding: 16px 0 16px 0;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    color: white;
+                    border-bottom: 1px solid white;
+    
+                    overflow-x: hidden;
+
+                    p {
+                        overflow-x: auto;
+                        text-overflow: ellipsis;
+                    }
+                   
+                }
+            }
+        }
+        
+    }
+}

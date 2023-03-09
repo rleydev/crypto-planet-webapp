@@ -4,7 +4,7 @@ import "./explore.scss"
 import CryptoPlanet from "./CryptoPlanet/crypto-planet"
 import Info from "./Info/info";
 
-const Explore = () => {
+const Explore:React.FC = () => {
 
   const shortenAddress = (addr: string): string => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
   const { activateBrowserWallet, account } = useEthers();

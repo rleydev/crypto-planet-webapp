@@ -1,7 +1,7 @@
 import './betainfo.scss'
 import React from "react"
 
-const BetaInfo = () => {
+const BetaInfo:React.FC = () => {
   return (
     <div className="beta-info">
       <h3>

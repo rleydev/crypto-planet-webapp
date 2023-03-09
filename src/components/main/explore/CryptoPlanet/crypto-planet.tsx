@@ -3,7 +3,7 @@ import './crypto-planet.scss'
 import Planet from './Planet/planet'
 import Roadmap from "./RoadMap/roadmap";
 
-const CryptoPlanet = () => {
+const CryptoPlanet:React.FC = () => {
     return (
         <div className="first-headline">
             <div className="first-headline__headline">
