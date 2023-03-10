@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react"
-import { Link } from 'react-router-dom';
-import "./userstable.scss"
+import {Link} from 'react-router-dom';
+import UserPage from "../../../UserPage/userpage";
+import "./userstable.scss";
 
 interface UsersData {
     id: number;
@@ -9,10 +10,14 @@ interface UsersData {
     address: string;
 }
 
-const UsersTable = () => {
-
+const UsersTable:React.FC = () => {
+    // const navigate = useNavigate();
 
     const [users, setUsers] = useState<UsersData[]>([])
+
+    // const navigateUserPage = () => {
+    //     navigate('/user', {replace: true});
+    // }
 
     // fetch users data from API
     useEffect(() => {
@@ -44,25 +49,19 @@ const UsersTable = () => {
                 {users.map((user: UsersData) => 
                 <div key={user.id.toString()}>
                     <div className="table-body">
-                        <div  className="name-column">
+                        <Link to='/user' state={ {user} } className="name-column">
                             <p>{user.username}</p>
-                            {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
-                        </div>
-                        <div className="email-column">
-                            <p>
-                                {user.email}
-                                {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
-                            </p>
-                        </div>
-                        <div className="wallet-column">
-                            <p>
-                                {user.address}
-                                {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
-                            </p>
-                        </div>
+                        </Link>
+                        <Link to='/user' state={ {user} } className="email-column">
+                            <p>{user.email}</p>
+                        </Link>
+                        <Link to='/user' state={ {user} } className="wallet-column">
+                            <p>{user.address}</p>
+                        </Link>
                     </div> 
                 </div>   
                 )}
+                        
             </div>
             
       </article>

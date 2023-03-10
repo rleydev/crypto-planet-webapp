@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 import { DAppProvider, Rinkeby } from "@usedapp/core";
 import { getDefaultProvider } from 'ethers';
@@ -20,7 +21,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <DAppProvider config={config}>
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </React.StrictMode>
   </DAppProvider>
   

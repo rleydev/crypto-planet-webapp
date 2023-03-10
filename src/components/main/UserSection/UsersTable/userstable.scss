@@ -66,6 +66,7 @@
     
                     overflow-x: auto;
                     text-overflow: ellipsis;
+                    text-decoration: none;
                     
                 }
     
@@ -95,6 +96,7 @@
                     line-height: 18px;
                     color: white;
                     border-bottom: 1px solid white;
+                    text-decoration: none;
 
                     p {
                         overflow-x: hidden ;
@@ -117,9 +119,9 @@
                     border-bottom: 1px solid white;
     
                     overflow-x: hidden;
+                    text-decoration: none;
 
                     p {
-                        
                         text-overflow: ellipsis;
                         overflow-x: hidden;
                     }
