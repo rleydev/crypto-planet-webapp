@@ -14,7 +14,6 @@
     }
 
     article {
-        overflow-y: scroll;
 
         .table-head {
             display: flex;
@@ -98,7 +97,7 @@
                     border-bottom: 1px solid white;
 
                     p {
-                        overflow-x: auto;
+                        overflow-x: hidden ;
                         text-overflow: ellipsis;
                     }
                 }
@@ -120,8 +119,9 @@
                     overflow-x: hidden;
 
                     p {
-                        overflow-x: auto;
+                        
                         text-overflow: ellipsis;
+                        overflow-x: hidden;
                     }
                    
                 }

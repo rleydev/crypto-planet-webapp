@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState} from "react"
+import { Link } from 'react-router-dom';
 import "./userstable.scss"
 
 interface UsersData {
@@ -44,22 +45,23 @@ const UsersTable = () => {
                 <div key={user.id.toString()}>
                     <div className="table-body">
                         <div  className="name-column">
-                            {user.username}
+                            <p>{user.username}</p>
+                            {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
                         </div>
                         <div className="email-column">
                             <p>
                                 {user.email}
+                                {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
                             </p>
                         </div>
                         <div className="wallet-column">
                             <p>
                                 {user.address}
+                                {/* <Link to={`/user/${user.id}`}>{user.username}</Link> */}
                             </p>
                         </div>
                     </div> 
-                </div>
-                    
-                    
+                </div>   
                 )}
             </div>
             

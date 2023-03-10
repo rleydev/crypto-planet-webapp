@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ExtensionWindow from './components/modal-window/modal-window';
+import { Route } from 'react-router-dom';
+import UserPage from './components/UserPage/userpage';
 import './App.scss'
 import Main from './components/main/main'
 
@@ -16,9 +18,10 @@ function App() {
 
   return (
     <div>
-      {showModal && <ExtensionWindow handleClose={handleCloseModal} />} {/* Render the modal only when showModal is true */}
+      {/* {showModal && <ExtensionWindow handleClose={handleCloseModal} />} */}
       {<Main />}
 
+      {/* <UserPage /> */}
 
     </div>
   );
