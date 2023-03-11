@@ -54,10 +54,10 @@
                 align-items: center;
 
                 &:first-of-type {
-                    a p {
+                    div p {
                         color: #E75626;
                     }
-                    
+
                     .delete {
                         background-image: url(../../../../assets/delete.png);
                         width: 10px;
@@ -80,6 +80,10 @@
                     text-overflow: ellipsis;
                     text-decoration: none;
                     
+                }
+
+                .custom-name-column {
+                    pointer-events: none;
                 }
     
                 .email-column {
@@ -115,6 +119,10 @@
                         text-overflow: ellipsis;
                     }
                 }
+
+                .custom-email-column {
+                    pointer-events: none;
+                }
     
                 .wallet-column {
                     display: flex;
@@ -139,6 +147,10 @@
 
                     }
                    
+                }
+
+                .custom-wallet-column {
+                    pointer-events: none;
                 }
             }
         }
