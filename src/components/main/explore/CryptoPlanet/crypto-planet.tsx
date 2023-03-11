@@ -1,6 +1,6 @@
 import React from "react";
-import './crypto-planet.scss'
-import Planet from '../../../Planet/planet'
+import './crypto-planet.scss';
+import Planet from '../../../Planet/planet';
 import Roadmap from "./RoadMap/roadmap";
 
 const CryptoPlanet:React.FC = () => {

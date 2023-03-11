@@ -1,7 +1,7 @@
-import React from "react"
-import Explore from "./explore/explore"
-import User from "./UserSection/user"
-import "./main.scss"
+import React from "react";
+import Explore from "./explore/explore";
+import User from "./UserSection/user";
+import "./main.scss";
 
 const Main:React.FC = () => {
   return (

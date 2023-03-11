@@ -26,14 +26,17 @@
         pointer-events: none;
     }
 
-    button {
+    .list-button-disabled {
+        opacity: 0.3;
+    }
+
+    .list-button {
         background-color: #E75626;
         color: white;
         width: 188px;
         height: 38px;
         border: none;
         border-radius: 30px;
-        opacity: 0.3;
         margin-top: 28px;
 
         font-family: 'Bebas Neue', cursive;

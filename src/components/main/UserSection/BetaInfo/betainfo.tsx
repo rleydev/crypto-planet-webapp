@@ -1,5 +1,5 @@
-import './betainfo.scss'
-import React from "react"
+import './betainfo.scss';
+import React from "react";
 
 const BetaInfo:React.FC = () => {
   return (

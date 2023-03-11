@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import "./form.scss"
+import React, {useState} from "react";
+import "./form.scss";
 
 interface FormProps {
     onSubmit: (name: string, email: string) => void;

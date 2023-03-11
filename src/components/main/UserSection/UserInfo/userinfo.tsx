@@ -10,7 +10,7 @@ interface UserInfoProps {
 
 const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
 
-  
+  const { account } = useEthers();
   const [user, setUser] = useState({username: "", useremail: ""});
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
@@ -23,7 +23,6 @@ const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
       setIsClicked(true)
     }
 };
-
   return (
     <form onSubmit={handleClick} className="user-info">
         <label>NAME</label>
@@ -32,7 +31,13 @@ const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
         <label>EMAIL</label>
         <input type='text' value={email} onChange={e => e.target.value} >
         </input>
-        <button type="submit" onClick={() => setUser({username: name, useremail:email})}>LIST ME TO THE TABLE</button>
+        { !account ? (
+            <button type="submit" className="list-button list-button-disabled">LIST ME TO THE TABLE</button>
+          ) : (
+            <button type="submit" className="list-button" onClick={() => setUser({username: name, useremail:email})}>LIST ME TO THE TABLE</button>
+          )
+        }
+        
     </form>
   )
 }

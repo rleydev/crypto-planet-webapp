@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ExtensionWindow from './components/modal-window/modal-window';
 import { Routes, Route } from 'react-router-dom';
 import UserPage from './components/UserPage/userpage';
-import './App.scss'
-import Main from './components/main/main'
+import './App.scss';
+import Main from './components/main/main';
 
 function App() {
   const [showModal, setShowModal] = useState(false);

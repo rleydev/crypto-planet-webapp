@@ -1,5 +1,5 @@
 import React from "react";
-import './modal-window.scss'
+import './modal-window.scss';
 
 interface ExtensionWindowProps {
     handleClose: () => void;

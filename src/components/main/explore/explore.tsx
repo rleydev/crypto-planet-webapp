@@ -1,5 +1,5 @@
-import React from "react"
-import CryptoPlanet from "./CryptoPlanet/crypto-planet"
+import React from "react";
+import CryptoPlanet from "./CryptoPlanet/crypto-planet";
 import Info from "./Info/info";
 import Header from "../../Header/header";
 

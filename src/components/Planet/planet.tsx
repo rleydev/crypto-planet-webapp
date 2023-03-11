@@ -1,7 +1,8 @@
 import React from "react";
-import './planet.scss'
+import './planet.scss';
 
 const Planet:React.FC = () => {
+
     return (
         <div className="planet">
             <div className="planet__l1">
