@@ -7,25 +7,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { DAppProvider, Rinkeby } from "@usedapp/core";
 import { getDefaultProvider } from 'ethers';
 
-// const config = {
-//   readOnlyChainId: Rinkeby.chainId,
-//   readOnlyUrls: {
-//     [Rinkeby.chainId]: getDefaultProvider('rinkeby'),
-//   },
-// }
+const config = {
+  readOnlyChainId: Rinkeby.chainId,
+  readOnlyUrls: {
+    [Rinkeby.chainId]: getDefaultProvider('rinkeby'),
+  },
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  // <DAppProvider config={config}>
+  <DAppProvider config={config}>
     <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </React.StrictMode>
-  // </DAppProvider>
+  </DAppProvider>
   
 );
 

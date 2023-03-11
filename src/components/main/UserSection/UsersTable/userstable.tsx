@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react"
 import { Link } from 'react-router-dom';
+import { useEthers } from "@usedapp/core";
 import "./userstable.scss";
 
 interface UsersData {
@@ -17,6 +18,11 @@ interface User {
 
 const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
 
+    // Metamask Account
+    const { activateBrowserWallet, account } = useEthers();
+    const address = (addr: string): string => `${addr}`;
+
+    // users
     const [allUsers, setAllUsers] = useState<UsersData[]>([])
 
     // Add user from left side data to list
@@ -27,9 +33,9 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
     function addUser() {
             setAllUsers(prev => [ {
                 id: Math.floor(Math.random() * 1000000),
-                username: username!,
-                email: useremail!,
-                address: "fml24n3535bUBIDBdaw",
+                username: username || 'Error',
+                email: useremail || 'Error',
+                address: address(account || 'Mock adress is set, please log into Metamask!'),
             }, ...prev])
     }
 
@@ -45,6 +51,7 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                 alert('Error fetching table data')
             }
         }
+        activateBrowserWallet()
         fetchData();
      },[]);
 
