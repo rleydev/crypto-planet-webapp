@@ -27,9 +27,7 @@ const UserPage: React.FC = () => {
             </div>
             <Planet />
         </article>
-        
     </div>
-    
   );
 };
 

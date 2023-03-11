@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from "react"
-import {Link} from 'react-router-dom';
-import UserPage from "../../../UserPage/userpage";
+import { Link } from 'react-router-dom';
 import "./userstable.scss";
 
 interface UsersData {
@@ -10,14 +9,29 @@ interface UsersData {
     address: string;
 }
 
-const UsersTable:React.FC = () => {
-    // const navigate = useNavigate();
+interface User {
+    username?: string;
+    useremail?: string;
+    handleChange?: (name: string, email: string) => void;
+}
 
-    const [users, setUsers] = useState<UsersData[]>([])
+const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
 
-    // const navigateUserPage = () => {
-    //     navigate('/user', {replace: true});
-    // }
+    const [allUsers, setAllUsers] = useState<UsersData[]>([])
+
+    // Add user from left side data to list
+    useEffect(() => {
+        addUser()
+    }, [handleChange])
+
+    function addUser() {
+            setAllUsers(prev => [ {
+                id: Math.floor(Math.random() * 1000000),
+                username: username!,
+                email: useremail!,
+                address: "fml24n3535bUBIDBdaw",
+            }, ...prev])
+    }
 
     // fetch users data from API
     useEffect(() => {
@@ -26,14 +40,13 @@ const UsersTable:React.FC = () => {
                 const response = await fetch(
                     'https://new-backend.unistory.app/api/data?page=0&perPage=50');
                      const data = await response.json();
-                     setUsers( data.items)
-                     console.log(data)
+                     setAllUsers(data.items)
             } catch (e) {
                 alert('Error fetching table data')
             }
         }
         fetchData();
-     }, []);
+     },[]);
 
   return (
     <div className="users-table">
@@ -46,22 +59,20 @@ const UsersTable:React.FC = () => {
                 <h3>WALLET</h3>
             </div>
             <div className="table-body-container">
-                {users.map((user: UsersData) => 
-                <div key={user.id.toString()}>
-                    <div className="table-body">
-                        <Link to='/user' state={ {user} } className="name-column">
-                            <p>{user.username}</p>
-                        </Link>
-                        <Link to='/user' state={ {user} } className="email-column">
-                            <p>{user.email}</p>
-                        </Link>
-                        <Link to='/user' state={ {user} } className="wallet-column">
-                            <p>{user.address}</p>
-                        </Link>
-                    </div> 
-                </div>   
-                )}
-                        
+                {
+                    allUsers.map((user: UsersData) => 
+                        <div className="table-body" key={user.id.toString()}>
+                                <Link to='/user' state={ {user} } className="name-column">
+                                    <p>{user.username}</p>
+                                </Link>
+                                <Link to='/user' state={ {user} } className="email-column">
+                                    <p>{user.email}</p>
+                                </Link>
+                                <Link to='/user' state={ {user} } className="wallet-column">
+                                    <p>{user.address}</p>
+                                </Link>
+                        </div>)
+                }
             </div>
             
       </article>

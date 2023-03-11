@@ -17,7 +17,6 @@ const ExtensionWindow: React.FC<ExtensionWindowProps> = ({ handleClose }) => {
         </div>
       </div>
     </div>
-    
   );
 };
 

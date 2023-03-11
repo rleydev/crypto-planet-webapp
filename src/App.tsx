@@ -20,13 +20,10 @@ function App() {
     <Routes>
       <Route path="/" element={<div>
         {showModal && <ExtensionWindow handleClose={handleCloseModal} />}
-        {<Main />}
-        {/* <UserPage /> */}
-    </div>}>
-    </Route>
-    <Route path='/user' element={<UserPage />} />
-
-</Routes>
+        {<Main />}</div>}>
+      </Route>
+      <Route path='/user' element={<UserPage />} />
+    </Routes>
    
   );
 }

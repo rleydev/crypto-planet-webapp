@@ -52,6 +52,12 @@
                 display: flex;
                 flex-direction: row;
                 justify-content:first baseline;
+
+                &:first-of-type {
+                    a p {
+                        color: #E75626;
+                    }
+                }
     
                 .name-column {
                     width: 188px;
@@ -124,6 +130,7 @@
                     p {
                         text-overflow: ellipsis;
                         overflow-x: hidden;
+
                     }
                    
                 }

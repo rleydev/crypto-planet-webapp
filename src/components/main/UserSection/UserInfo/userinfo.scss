@@ -14,13 +14,16 @@
         }
     }
 
-    p {
+    input {
         font-family: 'Bebas Neue', cursive;
         font-size: 32px;
         font-weight: 700;
         line-height: 38px;
         color: #E75626;
         margin-top: 8px;
+        background-color: transparent;
+        border: none;
+        pointer-events: none;
     }
 
     button {
@@ -37,5 +40,9 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 21px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
