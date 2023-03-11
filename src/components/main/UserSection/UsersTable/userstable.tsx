@@ -31,15 +31,23 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
     }, [handleChange])
 
     function addUser() {
-            setAllUsers(prev => [ {
+            setAllUsers(prev => [{
                 id: Math.floor(Math.random() * 1000000),
                 username: username || 'Error',
                 email: useremail || 'Error',
-                address: address(account || 'Mock adress is set, please log into Metamask!'),
+                address: address(account || 'please log into Metamask!'),
             }, ...prev])
     }
 
-    // fetch users data from API
+    function removeUser() {
+        console.log(allUsers[0])
+        if (allUsers[0].username === username) {
+            // remove user custom from state
+            setAllUsers(prev => prev.slice(1))
+        }
+    }
+
+    // fetch users data from API and activates Metamask for adress
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -78,10 +86,11 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                                 <Link to='/user' state={ {user} } className="wallet-column">
                                     <p>{user.address}</p>
                                 </Link>
+                                {/* Rendered when custom user is added to table */}
+                                {  allUsers[0].username === username && <div className="delete" onClick={removeUser}></div>}
                         </div>)
                 }
             </div>
-            
       </article>
     </div>
   )

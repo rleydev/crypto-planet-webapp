@@ -24,7 +24,6 @@ function App() {
       </Route>
       <Route path='/user' element={<UserPage />} />
     </Routes>
-   
   );
 }
 
