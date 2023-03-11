@@ -12,10 +12,16 @@ const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
 
   
   const [user, setUser] = useState({username: "", useremail: ""});
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+
 
   const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    clickList(user.username, user.useremail);
+    // Limit to 1 click to add to the table
+    if (!isClicked) {
+      clickList(user.username, user.useremail)
+      setIsClicked(true)
+    }
 };
 
   return (
