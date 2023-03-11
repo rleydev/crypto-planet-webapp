@@ -1,6 +1,7 @@
 # Crypto Planet Web App
 **Web desktop application for beta registration of crypto wallet**
 ## About:
+- Desktop Application oriented size 1440px
 - React
 - Typescript
 - Hooks
@@ -13,7 +14,9 @@
 ## Instructions:
 - npm i
 - npm start (localhost:3000)
+-
 
+## Deploy: https://rleydev.github.io/crypto-planet-webapp
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

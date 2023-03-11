@@ -1,10 +1,7 @@
 .first-headline {
 
-    padding: 142px 64px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 142px;
+    margin-left: 64px;
 
     &__headline {
 
@@ -21,12 +18,16 @@
             text-transform: uppercase;
             font-family: 'Bebas Neue', cursive;
             font-size: 120px;
-            font-weight: 700;
+            font-weight: 90;
             line-height: 144px;
             color: white;
-            width: 1025px;
 
-            z-index: 10;
+            z-index: 22;
+
+            &:first-of-type{
+                max-width: 1300px;
+            }
+            
 
             span {
                 -webkit-text-fill-color: transparent;
@@ -38,20 +39,20 @@
         .nplanet {
 
             width: 350px;
-                height: 320px;
-                border-radius: 50%;
-    
-                position: relative;
-                z-index: 11;
-                top: -288px;
-                left: 662.47px;
-    
-                text-transform: uppercase;
-                font-family: 'Bebas Neue', cursive;
-                font-size: 120px;
-                font-weight: 700;
-                line-height: 144px;
-                color: #E75626;
+            border-radius: 50%;
+
+            position: absolute;
+            z-index: 11;
+            top: 260px;
+            left: 727px;
+
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            font-weight: 90;
+            line-height: 144px;
+            color: #E75626;
+            z-index: 23;
 
         }
         
@@ -60,17 +61,18 @@
             height: 320px;
             width: 320px;
 
-            position: relative;
+            position: absolute;
             z-index: 11;
-            top: -288px;
-            left: 629.47px;
+            top: 404px;
+            left: 693px;
 
             text-transform: uppercase;
             font-family: 'Bebas Neue', cursive;
             font-size: 120px;
-            font-weight: 700;
+            font-weight: 90;
             line-height: 144px;
             color: #E75626;
+            z-index: 23;
 
             border-radius: 50%;
         }

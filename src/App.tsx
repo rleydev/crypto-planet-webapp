@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<div>
+      <Route path="/crypto-planet-webapp" element={<div>
         {showModal && <ExtensionWindow handleClose={handleCloseModal} />}
         {<Main />}</div>}>
       </Route>
