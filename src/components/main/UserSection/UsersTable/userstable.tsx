@@ -75,37 +75,39 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
             </div>
             <div className="table-body-container">
                 {
-                    allUsers.map((user: UsersData) => 
+                    allUsers.map((user: UsersData, index:number) => 
                         <div className="table-body" key={user.id.toString()}>
-                            { allUsers[0].username === username ? (
+                            {/* Conditional Rendering for Link */}
+                            {index === 0 && allUsers[0].username === username ? (
                                 <div className="name-column custom-name">
                                     <p>{user.username}</p>
                                 </div>
-                            ) : (
-                                <Link to='/user' state={ {user} } className="name-column">
+                                ) : (
+                                <Link to="/user" state={{user}} className="name-column">
                                     <p>{user.username}</p>
                                 </Link>
                             )}
 
-                            { allUsers[0].username === username ? (
+                            {index === 0 && allUsers[0].username === username ? (
                                 <div className="email-column custom-email-column">
                                     <p>{user.email}</p>
                                 </div>
-                            ) : (
-                                <Link to='/user' state={ {user} } className="email-column">
-                                    <p>{user.email}</p>
+                                ) : (
+                                <Link to="/user" state={{user}} className="name-column">
+                                    <p>{user.username}</p>
                                 </Link>
                             )}
-                                
-                            { allUsers[0].username === username ? (
+
+                            {index === 0 && allUsers[0].username === username ? (
                                 <div className="wallet-column custom-wallet-column">
                                     <p>{user.address}</p>
                                 </div>
-                            ) : (
+                                ) : (
                                 <Link to='/user' state={ {user} } className="wallet-column">
                                     <p>{user.address}</p>
                                 </Link>
-                            )}    
+                            )}
+                                
                             {/* Rendered when custom user is added to table */}
                             {  allUsers[0].username === username && <div className="delete" onClick={removeUser}></div>}
                         </div>)
