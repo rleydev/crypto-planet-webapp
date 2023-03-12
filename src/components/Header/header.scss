@@ -1,0 +1,61 @@
+.head {
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+
+    padding: 14px 64px 60px 64px;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .head__header-link {
+            text-decoration: none;
+        }
+
+        &__logo {
+            width: 199px;
+            height: 44px;
+            background-color: #5A5A5A;
+            color: #C7C7C7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: 'Bebas Neue', cursive;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21px;
+            cursor: default;
+        }
+
+        &__connect {
+            width: 161px;
+            height: 39px;
+            border: none;
+            border-radius: 30px;
+            background-color: #E75626;
+            color: white;
+
+            font-family: 'Bebas Neue', cursive;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21px;
+            cursor: pointer;
+        }
+
+        &__adress {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 21px;
+            width: 145px;
+            color: #E75626;
+        }
+
+    }
+}

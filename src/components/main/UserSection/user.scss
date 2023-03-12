@@ -1,0 +1,13 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 48px 122px 86px 64px;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 36px;
+    }
+}

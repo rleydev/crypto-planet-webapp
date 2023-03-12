@@ -1,0 +1,83 @@
+.first-headline {
+
+    margin-top: 142px;
+    margin-left: 64px;
+
+    &__headline {
+
+        z-index: 10;
+        
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 200px;
+
+        h1 {
+            position: relative;
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            font-weight: 90;
+            line-height: 144px;
+            color: white;
+
+            z-index: 22;
+
+            &:first-of-type{
+                max-width: 1300px;
+            }
+            
+
+            span {
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 0.3px #FFFFFF;
+                opacity: 0.6;
+            }
+        }
+
+        .nplanet {
+
+            width: 350px;
+            border-radius: 50%;
+
+            position: absolute;
+            z-index: 11;
+            top: 260px;
+            left: 726.5px;
+
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            font-weight: 90;
+            line-height: 144px;
+            color: #E75626;
+            z-index: 23;
+
+            cursor: default;
+
+        }
+        
+
+        .verse {
+            height: 320px;
+            width: 320px;
+
+            position: absolute;
+            z-index: 11;
+            top: 404px;
+            left: 693px;
+
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            font-weight: 90;
+            line-height: 144px;
+            color: #E75626;
+            z-index: 23;
+
+            border-radius: 50%;
+            cursor: default;
+        }
+    }
+}
