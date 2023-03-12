@@ -22,7 +22,7 @@ function App() {
         {showModal && <ExtensionWindow handleClose={handleCloseModal} />}
         {<Main />}</div>}>
       </Route>
-      <Route path='/user' element={<UserPage />} />
+      <Route path='/crypto-planet-webapp/user' element={<UserPage />} />
     </Routes>
   );
 }
