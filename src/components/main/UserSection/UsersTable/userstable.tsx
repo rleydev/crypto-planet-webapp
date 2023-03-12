@@ -83,7 +83,7 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                                     <p>{user.username}</p>
                                 </div>
                                 ) : (
-                                <Link to="/user" state={{user}} className="name-column">
+                                <Link to="/crypto-planet-webapp/user" state={{user}} className="name-column">
                                     <p>{user.username}</p>
                                 </Link>
                             )}
@@ -93,7 +93,7 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                                     <p>{user.email}</p>
                                 </div>
                                 ) : (
-                                <Link to="/user" state={{user}} className="name-column">
+                                <Link to="/crypto-planet-webapp/user" state={{user}} className="name-column">
                                     <p>{user.username}</p>
                                 </Link>
                             )}
@@ -103,7 +103,7 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                                     <p>{user.address}</p>
                                 </div>
                                 ) : (
-                                <Link to='/user' state={ {user} } className="wallet-column">
+                                <Link to='/crypto-planet-webapp/user' state={ {user} } className="wallet-column">
                                     <p>{user.address}</p>
                                 </Link>
                             )}
