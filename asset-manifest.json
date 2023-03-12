@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/crypto-planet-webapp/static/css/main.a6712799.css",
+    "main.css": "/crypto-planet-webapp/static/css/main.7a2a636d.css",
     "main.js": "/crypto-planet-webapp/static/js/main.521c146c.js",
     "static/media/planet.png": "/crypto-planet-webapp/static/media/planet.18ec54393ebdea5b19a0.png",
     "static/media/Ellipse2.png": "/crypto-planet-webapp/static/media/Ellipse2.594dc89b48e79b2ec7e4.png",
     "index.html": "/crypto-planet-webapp/index.html",
-    "main.a6712799.css.map": "/crypto-planet-webapp/static/css/main.a6712799.css.map",
+    "main.7a2a636d.css.map": "/crypto-planet-webapp/static/css/main.7a2a636d.css.map",
     "main.521c146c.js.map": "/crypto-planet-webapp/static/js/main.521c146c.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6712799.css",
+    "static/css/main.7a2a636d.css",
     "static/js/main.521c146c.js"
   ]
 }
