@@ -79,6 +79,10 @@
                     overflow-x: auto;
                     text-overflow: ellipsis;
                     text-decoration: none;
+
+                    p {
+                        cursor: pointer;
+                    }
                     
                 }
 
@@ -117,6 +121,7 @@
                     p {
                         overflow-x: hidden ;
                         text-overflow: ellipsis;
+                        cursor: pointer;
                     }
                 }
 
@@ -144,7 +149,7 @@
                     p {
                         text-overflow: ellipsis;
                         overflow-x: hidden;
-
+                        cursor: pointer;
                     }
                    
                 }

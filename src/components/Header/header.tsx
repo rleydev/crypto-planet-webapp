@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { useEthers } from '@usedapp/core';
 import './header.scss';
 
@@ -10,7 +11,9 @@ const Header:React.FC = () => {
   return (
     <div className="head">
       <div className="head__header">
-        <div className="head__header__logo">LOGO</div>
+        <Link to="/crypto-planet-webapp" className="head__header-link">
+          <div className="head__header__logo">LOGO</div>  
+        </Link>
         {!account ? (
           <button
             className="head__header__connect"

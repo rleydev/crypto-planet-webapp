@@ -79,7 +79,7 @@ const UsersTable:React.FC<User> = ({username,  useremail, handleChange}) => {
                         <div className="table-body" key={user.id.toString()}>
                             {/* Conditional Rendering for Link */}
                             {index === 0 && allUsers[0].username === username ? (
-                                <div className="name-column custom-name">
+                                <div className="name-column custom-name-column">
                                     <p>{user.username}</p>
                                 </div>
                                 ) : (

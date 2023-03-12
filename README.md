@@ -14,7 +14,9 @@
 ## Instructions:
 - npm i
 - npm start (localhost:3000)
--
+- install Metamsk Chrome Extension https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
+- create a wallet account
+- unlock with password if needed
 
 ## Deploy: https://rleydev.github.io/crypto-planet-webapp
 ## Getting Started with Create React App
