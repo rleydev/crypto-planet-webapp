@@ -20,7 +20,6 @@ const User:React.FC = () => {
 
   const handleListToTable = (username: string, useremail: string) => {
       setUser({ username, useremail })
-      
   }
 
   return (
