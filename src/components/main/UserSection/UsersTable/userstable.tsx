@@ -82,7 +82,7 @@ const UsersTable: React.FC<User> = ({ username, useremail, handleChange }) => {
             setAllUsers((prev) =>
                 prev.filter((user) => user.username !== parsedFormUser.name)
             )
-
+            localStorage.removeItem('users')
             localStorage.removeItem('form-user')
         }
 
@@ -95,13 +95,16 @@ const UsersTable: React.FC<User> = ({ username, useremail, handleChange }) => {
                 "https://new-backend.unistory.app/api/data?page=0&perPage=50"
             )
             const data = await response.json()
-            if (parsedUsers[0].username === "name") {
+            if ((storedData) && parsedUsers[0].username === "name") {
                 setAllUsers(data.items)
                 console.log('set1')
             } else if ((storedData)) {
                     setAllUsers( [parsedUsers[0], ...data.items])
                     console.log(parsedUsers)
                     console.log('set2')
+            } else {
+                setAllUsers(data.items)
+                console.log('set3')
             }
         } catch (e) {
             alert("Error fetching table data")
