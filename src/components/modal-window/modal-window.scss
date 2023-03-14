@@ -9,14 +9,12 @@
 
     background-color: rgba($color: #000000, $alpha: 0.6);
     z-index: 200;
-    // padding-right: 40px;
-    // padding-bottom: 700px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .modal-overlay {
 
+    margin-top: 400px;
     background-color: #262628;
     width: 422px;
     height: 295px;

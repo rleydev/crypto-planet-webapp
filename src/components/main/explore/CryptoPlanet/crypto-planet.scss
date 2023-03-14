@@ -1,11 +1,27 @@
 .first-headline {
+    
 
     margin-top: 142px;
     margin-left: 64px;
 
+    // .overlay-text {
+    //     position: absolute;
+    //     top: 209px;
+    //     left: 731px;
+    //     width: 320px;
+    //     height: 320px;
+    //     background-color: #E75626;
+    //     // mix-blend-mode: multiply;
+    //     border-radius: 50%;
+    //     z-index: 30;
+    //     opacity: 1;
+    //     z-index: 100;
+    // }
+
     &__headline {
 
-        z-index: 10;
+        position: relative;
+        width: 1100px;
         
 
         display: flex;
@@ -22,62 +38,32 @@
             line-height: 144px;
             color: white;
 
-            z-index: 22;
+            z-index: 24;
 
             &:first-of-type{
                 max-width: 1300px;
             }
             
 
-            span {
+            .our-span {
                 -webkit-text-fill-color: transparent;
                 -webkit-text-stroke: 0.3px #FFFFFF;
                 opacity: 0.6;
             }
-        }
-
-        .nplanet {
-
-            width: 350px;
-            border-radius: 50%;
-
-            position: absolute;
-            z-index: 11;
-            top: 260px;
-            left: 726.5px;
-
-            text-transform: uppercase;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 120px;
-            font-weight: 90;
-            line-height: 144px;
-            color: #E75626;
-            z-index: 23;
-
-            cursor: default;
-
-        }
-        
-
-        .verse {
-            height: 320px;
-            width: 320px;
-
-            position: absolute;
-            z-index: 11;
-            top: 404px;
-            left: 693px;
-
-            text-transform: uppercase;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 120px;
-            font-weight: 90;
-            line-height: 144px;
-            color: #E75626;
-            z-index: 23;
-
-            border-radius: 50%;
-            cursor: default;
-        }
+         }
     }
+}
+
+.overlay-text {
+    position: absolute;
+    top: 209px;
+    left: 732px;
+    
+    width: 320px;
+    height: 320px;
+    background-color: #E75626;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+    border-radius: 50%;
+    z-index: 25;
 }

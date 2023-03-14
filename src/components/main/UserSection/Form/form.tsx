@@ -12,6 +12,7 @@ const Form: React.FC<FormProps> = ({onSubmit}) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        localStorage.setItem('form-user', JSON.stringify({name, email}))
         onSubmit(name, email);
     };
 
