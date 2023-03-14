@@ -18,18 +18,20 @@ const Planet:React.FC = () => {
                                 dur="2s"
                                 repeatCount="indefinite"
                                 from="251.2"
-                                to="0"
+                                to="125"
                                 fill="freeze"
                             />
                         </circle>
                     </svg>
-
                 </div>
                 <div className="planet__l2">
+                    <div className="right-dot"></div>
+                    <div className="bottom-dot"></div>
                     <div className="planet__l2__stroke1">
                         <div className="planet__l2__stroke2">
                             <div className="planet__l2__lay">
-                                <div className="q-1"></div>
+                                <div className="q-1">
+                                </div>
                             </div>
                         </div>
                     </div>

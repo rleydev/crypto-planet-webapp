@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './userpage.scss';
 import Header from "../Header/header";
 import Planet from "../Planet/planet";
@@ -9,6 +9,10 @@ const UserPage: React.FC = () => {
 
     const location = useLocation();
     const user = location.state.user;
+
+    useEffect(() => {
+            console.log(window.localStorage.getItem('name'))
+    }, [])
 
   return (
     <div className="detail-page">

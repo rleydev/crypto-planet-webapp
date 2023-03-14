@@ -38,6 +38,7 @@
         z-index: 21;
         align-self: center;
         justify-self: center;
+        z-index: 22;
     }
 
 
@@ -52,6 +53,28 @@
         z-index: 22;
         width: 400px;
         height: 400px;
+
+        .right-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #E75626;
+            border-radius: 50%;
+            position: absolute;
+            top: -14.5px;
+            left: -10px;
+            margin-left: 210px;
+            z-index: 30;
+        }
+
+        .bottom-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #E75626;
+            border-radius: 50%;
+            position: absolute;
+            top: 190px;
+            left: 409px;
+        }
 
         &__stroke1 {
             background-image: url(../../assets/EllipseStroke1.png);
@@ -77,6 +100,14 @@
         }
 
         &__lay {
+        
+            background-image: url(../../assets/planet.png);
+            background-size: contain;
+            mix-blend-mode: lighten;
+            border-radius: 50%;
+            width: 320px;
+            height: 320px;
+            
 
             .q-1 {
                 position: absolute;
@@ -87,12 +118,8 @@
                 background-size: contain;
                 width: 80px;
                 height: 30px;
-            }
 
-            background-image: url(../../assets/planet.png);
-            background-size: contain;
-            width: 320px;
-            height: 320px;
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {  useEthers } from '@usedapp/core';
-import "./userinfo.scss"
+import "./userinfo.scss";
 
 interface UserInfoProps {
     name: string;
@@ -17,6 +17,7 @@ const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
 
   const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     // Limit to 1 click to add to the table
     if (!isClicked) {
       clickList(user.username, user.useremail)

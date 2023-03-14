@@ -20,12 +20,12 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <DAppProvider config={config}>
-    <React.StrictMode>
+     {/* <React.StrictMode>  */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
-  </DAppProvider>
+     {/* </React.StrictMode>  */}
+   </DAppProvider> 
   
 );
 
