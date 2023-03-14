@@ -16,9 +16,9 @@ const Planet:React.FC = () => {
                         
                             <animate attributeName="stroke-dashoffset"
                                 dur="2s"
-                                repeatCount="indefinite"
+                                repeatCount="1"
                                 from="251.2"
-                                to="125"
+                                to="126"
                                 fill="freeze"
                             />
                         </circle>
