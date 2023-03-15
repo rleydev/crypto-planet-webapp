@@ -1,6 +1,6 @@
 import React, {useState} from "react"
-import {  useEthers } from '@usedapp/core';
 import "./userinfo.scss";
+import {  useEthers } from '@usedapp/core';
 
 interface UserInfoProps {
     name: string;
@@ -10,20 +10,25 @@ interface UserInfoProps {
 
 const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
 
-  const { account } = useEthers();
   const [user, setUser] = useState({username: "", useremail: ""});
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const { account } = useEthers();
 
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Limit to 1 click to add to the table
-    if (!isClicked) {
-      clickList(user.username, user.useremail)
-      setIsClicked(true)
-    }
-};
+    if (account) {
+      if (!isClicked) {
+        clickList(user.username, user.useremail)
+        setIsClicked(true)
+      }
+      }
+    // }
+    
+    
+  };
+
   return (
     <form onSubmit={handleClick} className="user-info">
         <label>NAME</label>

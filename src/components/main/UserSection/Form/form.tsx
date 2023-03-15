@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./form.scss";
+import {  useEthers } from '@usedapp/core';
 
 interface FormProps {
     onSubmit: (name: string, email: string) => void;
@@ -7,13 +8,17 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = ({onSubmit}) => {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+
+    const { activateBrowserWallet, account } = useEthers();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        localStorage.setItem('form-user', JSON.stringify({name, email}))
-        onSubmit(name, email);
+        if (account) {
+            localStorage.setItem('form-user', JSON.stringify({name, email}))
+            onSubmit(name, email);
+        }
     };
 
     return (

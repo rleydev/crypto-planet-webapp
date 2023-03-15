@@ -8,6 +8,12 @@ const Header:React.FC = () => {
   const shortenAddress = (addr: string): string => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
   const { activateBrowserWallet, account } = useEthers();
 
+  const buttonPressed = () => {
+    localStorage.setItem('click', 'true')
+    console.log('header pressed' + localStorage.getItem('click'))
+    activateBrowserWallet()
+  }
+
   return (
     <div className="head">
       <div className="head__header">
@@ -17,7 +23,7 @@ const Header:React.FC = () => {
         {!account ? (
           <button
             className="head__header__connect"
-            onClick={() => activateBrowserWallet()}
+            onClick={() => buttonPressed()}
           >
             CONNECT METAMASK
           </button>

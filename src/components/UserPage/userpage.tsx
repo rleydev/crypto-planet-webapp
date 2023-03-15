@@ -11,7 +11,7 @@ const UserPage: React.FC = () => {
     const user = location.state.user;
 
     useEffect(() => {
-            console.log(window.localStorage.getItem('name'))
+            localStorage.setItem('link', 'true')
     }, [])
 
   return (

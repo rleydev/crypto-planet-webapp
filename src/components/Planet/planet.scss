@@ -55,25 +55,25 @@
         height: 400px;
 
         .right-dot {
-            width: 6px;
-            height: 6px;
+            width: 10px;
+            height: 10px;
             background-color: #E75626;
             border-radius: 50%;
             position: absolute;
-            top: -14.5px;
+            top: -17px;
             left: -10px;
             margin-left: 211px;
             z-index: 30;
         }
 
         .bottom-dot {
-            width: 6px;
-            height: 6px;
+            width: 10px;
+            height: 10px;
             background-color: #E75626;
             border-radius: 50%;
             position: absolute;
             top: 193px;
-            left: 409px;
+            left: 407px;
         }
 
         &__stroke1 {
