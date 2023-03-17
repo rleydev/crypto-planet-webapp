@@ -113,8 +113,21 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
             "https://new-backend.unistory.app/api/data?page=0&perPage=50"
         )
         const data = await response.json()
-            setAllUsersTable(data.items)
-            console.log('set-1')
+        if (lastFormSub) {
+          setAllUsersTable([
+              {
+                id: parsedLastFormSub.customUser.id,
+                username: parsedLastFormSub.customUser.username,
+                email: parsedLastFormSub.customUser.email,
+                address: parsedLastFormSub.customUser.address,
+              }, ...data.items]
+          )
+          setFormState(true)
+        } else {
+          setAllUsersTable(data.items)
+          console.log('set-1')
+        }
+            
     } catch (e) {
         alert("Error fetching table data")
     }
@@ -134,7 +147,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
       localStorage.setItem('form-user', JSON.stringify({customUser}))
     }
 
-    
     console.log('ACTIVATE WALLET AFTER SUBMIT ' + account)
   }, [handleConnect])
 
@@ -156,6 +168,8 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
         email: parsedForm.email
       })
     }
+
+
 
     // console.log('FORMS STORAGE CHECK AFTER LOADING _ ' + parsedLastFormSub.customUser.email + ' ' + parsedForm.email)
 
