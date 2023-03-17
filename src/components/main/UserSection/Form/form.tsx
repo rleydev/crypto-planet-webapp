@@ -10,8 +10,6 @@ const Form: React.FC<FormProps> = ({onSubmit}) => {
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
 
-    const click = localStorage.getItem('click')
-
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();

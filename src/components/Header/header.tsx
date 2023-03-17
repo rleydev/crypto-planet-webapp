@@ -13,15 +13,12 @@ const Header:React.FC<HeaderProps> = ({saveAccountToStorage}) => {
   const { activateBrowserWallet, account } = useEthers();
 
   const buttonPressed = () => {
-    localStorage.setItem('click', 'true')
     activateBrowserWallet()
-    console.log('header pressed and account connected')
   }
 
   const saveAccount = () => {
     localStorage.setItem('account', account!)
     const storedAccount = localStorage.getItem('account')
-    console.log('GET ACC _' + storedAccount)
     saveAccountToStorage(storedAccount!)
   }
 
