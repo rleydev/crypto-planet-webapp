@@ -1,33 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Explore from "./explore/explore";
 import User from "./UserSection/user";
 import "./main.scss";
-import { useEthers } from "@usedapp/core";
+import Header from "../Header/header";
+
 
 const Main:React.FC = () => {
 
-const link = localStorage.getItem('link')
-let linkParsed = JSON.parse(link!)
+// const link = localStorage.getItem('link')
+// let linkParsed = JSON.parse(link!)
 
-// const deleteState = localStorage.getItem('link')
-// let deleteStateParsed = JSON.parse(deleteState!)
+// Store data of account adress
+const [storedAccount, setStoredAcc] = useState<string>('')
 
-
-useEffect(() => {
-  if (link) {
-    linkParsed = false
-    localStorage.setItem('link', JSON.stringify(linkParsed))
-  }
-
-  // if (deleteState) {
-  //   localStorage.setItem('delete-state', 'false')
-  // }
-}, [])
+const saveAccount = (account: string) => {
+  setStoredAcc(account)
+}
   return (
-    <div className="main-page">
-      <Explore />
-      <User />
-    </div>
+      <div className="main-page">
+        <Header saveAccountToStorage={saveAccount} />
+        <Explore />
+        { storedAccount === "" ? (
+          <User />
+        ) : (
+          <User accountAdress={storedAccount} handleConnect={saveAccount} />
+        )}
+      </div>
   )
 }
 

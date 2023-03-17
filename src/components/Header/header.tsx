@@ -1,18 +1,34 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from 'react-router-dom';
 import { useEthers } from '@usedapp/core';
 import './header.scss';
 
-const Header:React.FC = () => {
+interface HeaderProps {
+  saveAccountToStorage: (account: string) => void
+}
+
+const Header:React.FC<HeaderProps> = ({saveAccountToStorage}) => {
 
   const shortenAddress = (addr: string): string => `${addr.slice(0, 5)}...${addr.slice(-4)}`;
   const { activateBrowserWallet, account } = useEthers();
 
   const buttonPressed = () => {
     localStorage.setItem('click', 'true')
-    console.log('header pressed' + localStorage.getItem('click'))
     activateBrowserWallet()
+    console.log('header pressed and account connected')
   }
+
+  const saveAccount = () => {
+    localStorage.setItem('account', account!)
+    const storedAccount = localStorage.getItem('account')
+    console.log('GET ACC _' + storedAccount)
+    saveAccountToStorage(storedAccount!)
+  }
+
+  // Save account adress 
+  useEffect(() => {
+    saveAccount()
+  }, [account])
 
   return (
     <div className="head">
@@ -23,7 +39,7 @@ const Header:React.FC = () => {
         {!account ? (
           <button
             className="head__header__connect"
-            onClick={() => buttonPressed()}
+            onClick={(e) => { e.preventDefault(); buttonPressed()}}
           >
             CONNECT METAMASK
           </button>
