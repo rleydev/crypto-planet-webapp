@@ -1,45 +1,59 @@
 import React, {useState} from "react"
-import {  useEthers } from '@usedapp/core';
 import "./userinfo.scss";
+import {  useEthers } from '@usedapp/core';
 
 interface UserInfoProps {
     name: string;
     email: string;
-    clickList: (name: string, email: string) => void;
+    clickList: (id: string, name: string, email: string, adress: string) => void;
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({ name, email, clickList }) => {
 
-  const { account } = useEthers();
   const [user, setUser] = useState({username: "", useremail: ""});
-  const [isClicked, setIsClicked] = useState<boolean>(false);
 
+  const clickValue = localStorage.getItem('click')
+  let click = JSON.parse(clickValue!)
 
-  const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const { account } = useEthers();
 
-    // Limit to 1 click to add to the table
-    if (!isClicked) {
-      clickList(user.username, user.useremail)
-      setIsClicked(true)
-    }
-};
+  const [clickState, setClickState] = useState<boolean>(click);
+
+  const formUser = localStorage.getItem('form-user')
+  const parsedFormUser = JSON.parse(formUser!)
+
+  const formSub = localStorage.getItem('form-sub')
+  const parsedForm = JSON.parse(formSub!)
+
+  const handleSubmit = () => {
+    // console.log('submitted user - ' + user.username)
+    // clickList(parsedForm.name, parsedForm.email)
+    // setClickState(false)
+    clickList("id", name, email, "adress")
+
+    // setUser({username: name, useremail: email})
+    console.log('Handle Submit LAST FORM COMPONENT INNER')
+    // click = false
+    // localStorage.setItem('click', JSON.stringify(click))
+  } 
+
   return (
-    <form onSubmit={handleClick} className="user-info">
-        <label>NAME</label>
-        <input type='text' value={name} onChange={e => e.target.value}>
-        </input>
-        <label>EMAIL</label>
-        <input type='text' value={email} onChange={e => e.target.value} >
-        </input>
+    <div className="user-info">
+        <h3>NAME</h3>
+        <p>
+          {name}
+        </p>
+        <h3>EMAIL</h3>
+        <p>
+          {email}
+        </p>
         { !account ? (
             <button type="submit" className="list-button list-button-disabled">LIST ME TO THE TABLE</button>
           ) : (
-            <button type="submit" className="list-button" onClick={() => setUser({username: name, useremail:email})}>LIST ME TO THE TABLE</button>
+            <button type="submit" className="list-button" onClick={() => handleSubmit()}>LIST ME TO THE TABLE</button>
           )
         }
-        
-    </form>
+    </div>
   )
 }
 

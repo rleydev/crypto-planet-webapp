@@ -10,13 +10,17 @@ const UserPage: React.FC = () => {
     const location = useLocation();
     const user = location.state.user;
 
+    const saveAccount = () => {
+
+    }
+
     useEffect(() => {
-            console.log(window.localStorage.getItem('name'))
+            localStorage.setItem('link', 'true')
     }, [])
 
   return (
     <div className="detail-page">
-        <Header />
+        <Header saveAccountToStorage={saveAccount} />
         <article className="detail-page__container">
             <div className="detail-container">
                 <h1>PERSONAL DATA</h1>
