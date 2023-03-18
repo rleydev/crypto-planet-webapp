@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import "./userstable.scss"
 
@@ -20,12 +20,8 @@ const UserTable: React.FC<UsersTable> = ({ allUsers, handleDelete}) => {
     const parsedLastFormUser = lastFormUser ? JSON.parse(lastFormUser) : {};
 
 
-  const formSub = localStorage.getItem('form-sub')
-  const parsedForm = JSON.parse(formSub!)
-
-    const formUser = localStorage.getItem('form-sub')
-    
-
+    const formSub = localStorage.getItem('form-sub')
+    const parsedForm = JSON.parse(formSub!)
 
     return (
         <div className="users-table">

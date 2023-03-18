@@ -61,9 +61,22 @@
     
     width: 320px;
     height: 320px;
-    background-color: #E75626;
-    mix-blend-mode: multiply;
-    opacity: 0.9;
+    // mix-blend-mode: multiply;
+    // opacity: 0.9;
     border-radius: 50%;
-    z-index: 25;
+    z-index: 27;
+    overflow: hidden;
+
+    h1 {
+        width: 1100px;
+        position: relative;
+        top: 51px;
+        left: -668px;
+        text-transform: uppercase;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 120px;
+        font-weight: 90;
+        line-height: 144px;
+        color: #E75626;
+    }
 }

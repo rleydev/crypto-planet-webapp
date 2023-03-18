@@ -22,8 +22,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
 
   const [allUsersTable, setAllUsersTable] = useState<UsersTablesData[]>([])
 
-  const [data, setData] = useState({ name: "", email: "" });
-  const [user, setUser] = useState({ username: "", useremail: "" });
   const {account} = useEthers()
 
   const lastFormSub = localStorage.getItem('form-user')
@@ -36,7 +34,7 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
     id: Math.floor(Math.random() * 1000000),
     username: 'name',
     email: 'email',
-    address: account || 'adress', 
+    address: account || accountAdress || 'adress', 
   })
 
 
@@ -44,7 +42,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
 
 
   const handleFormSubmit = (name: string, email: string) => {
-    setData({ name, email });
     setFormState(true) 
  
     if (lastFormSub && parsedLastFormSub.customUser.username !== 'name'
@@ -54,28 +51,17 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
         username: parsedForm.username,
         email: parsedForm.email,
       })
-      console.log('PASSED FROM form user')
     } else {
       setCustomUser({
         ...customUser,
         username: name,
         email: email,
       })
-      console.log('PASSED FROM form user NO')
     }
-    
-
-    console.log('handleSUBMIT FORM' )
   };
 
-  const addUser = () => {
-    
-  }
-
   const handleListToTable = (id: string, username: string, useremail: string, adress: string) => {
-    console.log('submit LAST FORM')
 
-    // if (customUser.id !== allUsersTable[0].id ) {
       localStorage.setItem('form-user', JSON.stringify({customUser}))
       
       if (formSub && allUsersTable[0].username !== parsedForm.name
@@ -89,7 +75,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
             },
             ...prev
           ])
-          console.log('ALL USERS TO TABLE _ ' + allUsersTable[0].username)
         } 
   
   }
@@ -101,9 +86,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
     setAllUsersTable(prev => prev.slice(1))
     localStorage.removeItem('form-user')
     localStorage.removeItem('form-sub')
-    console.log('AFTER DELETE 1USER IS' + allUsersTable[0].username)
-   
-    console.log('deletehandler')
 
   }
 
@@ -114,18 +96,19 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
         )
         const data = await response.json()
         if (lastFormSub) {
+          const accountStorage = localStorage.getItem('account')
+          // const parsedAccount = 
           setAllUsersTable([
               {
                 id: parsedLastFormSub.customUser.id,
                 username: parsedLastFormSub.customUser.username,
                 email: parsedLastFormSub.customUser.email,
-                address: parsedLastFormSub.customUser.address,
+                address: accountStorage,
               }, ...data.items]
           )
           setFormState(true)
         } else {
           setAllUsersTable(data.items)
-          console.log('set-1')
         }
             
     } catch (e) {
@@ -141,13 +124,12 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
         ...customUser,
         username: parsedForm.name,
         email: parsedForm.email,
-        address: accountAdress || 'sm'
+        address: accountAdress || account || 'sm'
       })
   
       localStorage.setItem('form-user', JSON.stringify({customUser}))
     }
 
-    console.log('ACTIVATE WALLET AFTER SUBMIT ' + account)
   }, [handleConnect])
 
 
@@ -158,7 +140,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
     // Observe Form State for Page Reloading
     if (formSub && !lastFormSub) {
       setFormState(true)
-      console.log('setFormstate ' + formState)
     }
     // Observe User Submited Form for Page Reloading
     if (formSub) {
@@ -168,9 +149,6 @@ const User:React.FC<UserProps> = ({accountAdress, handleConnect}) => {
         email: parsedForm.email
       })
     }
-
-
-
     // console.log('FORMS STORAGE CHECK AFTER LOADING _ ' + parsedLastFormSub.customUser.email + ' ' + parsedForm.email)
 
   }, []);
