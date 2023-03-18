@@ -17,10 +17,6 @@ const Form: React.FC<FormProps> = ({onSubmit}) => {
         onSubmit(name, email);
     };
 
-    useEffect(() => {
-
-    }, [])
-
     return (
         <form onSubmit={handleSubmit} className="form">
             <label className="name-label">NAME</label>

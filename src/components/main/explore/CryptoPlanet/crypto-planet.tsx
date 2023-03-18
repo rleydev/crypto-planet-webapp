@@ -10,7 +10,9 @@ const CryptoPlanet:React.FC = () => {
                     <h1>Explore Your own planet</h1>
                     <h1>In <span className="our-span">our New</span > metaverse</h1>
                 </div>
-            <div className="overlay-text">   
+            <div className="overlay-text"> 
+                <h1>Explore Your own planet</h1> 
+                <h1>In our New metaverse</h1> 
             </div>
             <Planet />
             <Roadmap />
